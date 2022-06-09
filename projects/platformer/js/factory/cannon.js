@@ -9,7 +9,7 @@
         const
             assetKeyCannon = 'cannon',
             assetKeyProjectile = 'projectile',
-            projectileHalfSize = 12;
+            projectileHalfSize = 20;
 
         game.cannon = game.add.group();
         game.projectile = game.add.group();
