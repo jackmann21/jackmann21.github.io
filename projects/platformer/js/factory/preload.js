@@ -9,6 +9,7 @@
         game.load.image('projectile', './asset/projectile.png');
         game.load.image('platform', './asset/platform.png');
         game.load.image('db', './asset/collectable/database.png');
+        game.load.image('strain', './asset/collectable/http://assets.stickpng.com/images/5cb77d52a7c7755bf004c125.png')
         game.load.image('steve', './asset/collectable/steve-head.png')
         game.load.image('grace', './asset/collectable/grace-head.png');
         game.load.image('kennedi', './asset/collectable/kennedi-head.png');

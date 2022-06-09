@@ -109,7 +109,7 @@
                 state.stop = state.duck = state.jump = state.flyingJump = doNothing;
             state.enter = function() {
                 console.log(`entering ${ name }`);
-                asset.body.setSize(22, 100, 0, -12);
+                asset.body.setSize(10, 40, 0, -5);
                 asset.x += xOffset * _direction;
                 asset.y += yOffset;
             };
@@ -123,7 +123,7 @@
         function createFlyingJumpState(name) {
             let 
                 xOffset = 17,
-                yOffset = 9,
+                yOffset = 15,
                 state = createState(name);
                 state.fire = state.duck = state.idle = state.walk = state.run = 
                 state.stop = state.duck = state.jump = state.flyingJump = doNothing;
