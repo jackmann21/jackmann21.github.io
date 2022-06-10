@@ -21,9 +21,10 @@ $(document).ready(function () {
         
         opspark.player.init(game);
         
-        const textOpts = { fontSize: '32px', fill: '#000' };
-        game.score = game.add.text(16, 16, 'Score: 0', textOpts);
-        game.lives = game.add.text(16, 70, 'Lives: ' + lives, textOpts);
+        const textOpts = { fontSize: '32px', fill: '#CC0000' };
+        game.score = game.add.text(160, 16, 'Score: 0', textOpts);
+        game.lives = game.add.text(160, 70, 'Lives: ' + lives, textOpts);
+        game.winning = game.add.text(160,120, 'Congratulations!', textOpts);
     }
 
 
@@ -61,6 +62,7 @@ $(document).ready(function () {
     function collectDb(player, collectable) {
         game.score.text = 'Score: ' + (parseInt(/\s+(\S*)$/.exec(game.score.text)[1], 10) + collectable.type.points);
         collectable.kill();
+        // todo: add if statement for game win
     }
 
 });

@@ -43,8 +43,7 @@
         createPlatform (635, 580, 0.3, 0.09)
         createPlatform (635, 400, 0.30, 0.09)
         createPlatform(850, 500, 0.3, 0.09)
-        createPlatform(10, 100, 0.4, 0.09)
-        createPlatform (170, 163, 0.15, 0.09)
+        createPlatform(10, 160, 0.6, 0.09)
         createPlatform (260, 235, 0.3, 0.09)
         
         
