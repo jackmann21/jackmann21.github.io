@@ -8,16 +8,17 @@
 		.box {
 			width: 70px;
 			height: 70px;
-			background-color: rgb(242, 92, 92);
-			font-size: 100%;
+			background-color: rgb(9, 98, 170);
+			font-size: 300%;
 			text-align: center;
 			display: block;
 			position: absolute;
-			top: 100px;
-			left: 0px;  /* <--- Change me! */
+			top: 450px;
+			left: 900px;  /* <--- Change me! */
 		}
 		.board{
 			height: 100vh;
+			background-color: rgb(250, 200, 126);
 		}
 	</style>
 	<!-- 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
@@ -25,7 +26,7 @@
 </head>
 <body class="board">
 	<!-- HTML for the box -->
-	<div class="box">?</div>
+	<div class="box">0</div>
 
 	<script>
 		(function(){
@@ -41,7 +42,7 @@
 			var boardWidth = board.width();	// the maximum X-Coordinate of the screen
 
 			// Every 50 milliseconds, call the update Function (see below)
-			setInterval(update, 50);
+			setInterval(update, 20);
 			
 			// Every time the box is clicked, call the handleBoxClick Function (see below)
 			box.on('click', handleBoxClick);
@@ -55,6 +56,7 @@
 			function changeBoxText(newText) {
 				box.text(newText);
 			}
+			
 
 			//////////////////////////////////////////////////////////////////
 			/////////////////// YOUR CODE BELOW HERE /////////////////////////
@@ -63,13 +65,24 @@
 			// TODO 2 - Variable declarations 
 			
 
-			
+			var positionX = 0
+			var points = 0
+			var speed = 10
 			/* 
 			This Function will be called 20 times/second. Each time it is called,
 			it should move the Box to a new location. If the box drifts off the screen
 			turn it around! 
 			*/
-			function update() {
+			// increase value of positionX by 10
+			function update() { 
+				speed = positionX + 10
+				moveBoxTo (positionX)
+				if (positionX>boardWidth) {
+					speed = -speed;
+				}
+				
+				
+				
 				
 
 			};
@@ -80,7 +93,10 @@
 			the left side of the screen.
 			*/
 			function handleBoxClick() {
-				
+				positionX = 0;
+				points = points + 1;
+				changeBoxText(points);
+				speed = speed + 3;
 
 
 			};
