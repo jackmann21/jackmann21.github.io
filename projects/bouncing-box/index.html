@@ -42,7 +42,7 @@
 			var boardWidth = board.width();	// the maximum X-Coordinate of the screen
 
 			// Every 50 milliseconds, call the update Function (see below)
-			setInterval(update, 20);
+			setInterval(update, 50);
 			
 			// Every time the box is clicked, call the handleBoxClick Function (see below)
 			box.on('click', handleBoxClick);
@@ -75,10 +75,14 @@
 			*/
 			// increase value of positionX by 10
 			function update() { 
-				speed = positionX + 10
+				positionX = positionX + speed
+				console.log(positionX)
 				moveBoxTo (positionX)
 				if (positionX>boardWidth) {
 					speed = -speed;
+				}
+				if (positionX<0) {
+					speed = speed * -1 
 				}
 				
 				
