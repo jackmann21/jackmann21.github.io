@@ -6,10 +6,10 @@
 	<script src="jquery.min.js"></script>
 	<style>
 		.box {
-			width: 70px;
-			height: 70px;
+			width: 140px;
+			height: 80px;
 			background-color: rgb(9, 98, 170);
-			font-size: 300%;
+			font-size: 500%;
 			text-align: center;
 			display: block;
 			position: absolute;
@@ -40,6 +40,7 @@
 			var box = jQuery('.box');	// reference to the HTML .box element
 			var board = jQuery('.board');	// reference to the HTML .board element
 			var boardWidth = board.width();	// the maximum X-Coordinate of the screen
+			var randNum = Math.random() * 100;
 
 			// Every 50 milliseconds, call the update Function (see below)
 			setInterval(update, 50);
@@ -76,7 +77,6 @@
 			// increase value of positionX by 10
 			function update() { 
 				positionX = positionX + speed
-				console.log(positionX)
 				moveBoxTo (positionX)
 				if (positionX>boardWidth) {
 					speed = -speed;
@@ -84,7 +84,9 @@
 				if (positionX<0) {
 					speed = speed * -1 
 				}
-				
+				// if (speed = speed)
+				console.log(speed)
+
 				
 				
 				
@@ -101,6 +103,13 @@
 				points = points + 1;
 				changeBoxText(points);
 				speed = speed + 3;
+				if (speed>0) {
+					speed = speed + 3
+				}
+				else if (speed<0) {
+					speed = speed-3
+				}	
+
 
 
 			};
