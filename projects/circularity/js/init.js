@@ -15,6 +15,13 @@ var init = function (window) {
         window.opspark.game = {};
         var game = window.opspark.game;
 
+        function randomColor(r, g, b, a) {
+            if (a) { return 'rgba(' + randomRGBRange(r) + ','  + randomRGBRange(g) + ',' + randomRGBRange(b) + ',' + a + ')'; }
+            return '#' + randomRGBRange(r) + randomRGBRange(g) + randomRGBRange(b);
+        }
+        function randomRGBRange(maxRange) {
+            return Math.floor(Math.random() * (maxRange + 1)).toString(16); 
+        }
         ////////////////////////////////////////////////////////////
         ///////////////// PROGRAM SETUP ////////////////////////////
         ////////////////////////////////////////////////////////////
@@ -25,8 +32,9 @@ var init = function (window) {
 
         // TODO 2 : Create a function that draws a circle 
         function drawCircle() {
-            circle = draw.randomCircleInArea(canvas, false, false, '#1', 10);
-            physikz.addRandomVelocity(circle, canvas, 2, 2);
+            // circle = draw.randomCircleInArea(canvas, false, false, '#111', 10);
+            circle = draw.rect(25,30,randomColor(225,255,255),'#000','#490',100,100);
+            physikz.addRandomVelocity(circle, canvas, 60, 20);
             view.addChild(circle);
             circles.push(circle);
         }

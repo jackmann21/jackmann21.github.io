@@ -80,7 +80,7 @@ We will want to draw many circles in this project so putting the code to draw on
 
 	````javascript
 	// Code to draw a circle
-	circle = draw.randomCircleInArea(canvas, true, true, '#999', 2);
+	circle = draw.randomSquareInArea(canvas, true, true, '#999', 2);
 	physikz.addRandomVelocity(circle, canvas);
 	view.addChild(circle);
 	circles.push(circle);
